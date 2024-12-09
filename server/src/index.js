@@ -12,6 +12,7 @@ const wilderController = require("./wilder/wilder.controller.js");
   });
   console.log("Connected");
 
+  app.use(express.json());
   app.get("/", (req, res) => {
     console.log("Got a request");
     res.json({ message: "Hey, I'm Tom, the API" });
