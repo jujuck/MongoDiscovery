@@ -5,6 +5,6 @@ services:
       - 5000:5000
     command: npm run start
     volumes:
-      - ./server/src/:/app/src/
+      - ./server/:/app/
   mongodb:
     image: mongo

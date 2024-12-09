@@ -8,5 +8,9 @@ router.get("/", (req, res) => {
 
 router.post("/", async (req, res) => {
   console.log("Got a post", req.body);
-  res.send("Hello, I'm the post route");
+  const wilder = new WilderModel(...req.body);
+  const result = await wilder.save();
+  res.status(200).json({ message: "Hey, I saved a wilder", result });
 });
+
+module.exports = router;
