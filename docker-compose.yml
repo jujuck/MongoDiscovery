@@ -1,0 +1,10 @@
+services:
+  server:
+    build: ./server
+    ports:
+      - 5000:5000
+    command: npm run start
+    volumes:
+      - ./server/src/:/app/src/
+  mongodb:
+    image: mongo
